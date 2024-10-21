@@ -43,4 +43,8 @@ def title_by_year(matches: List[str]) -> List[str]:
             print("FOUND")
     return result
 
+pa_list: List[Tuple[List[str], Callable[[List[str]], List[Any]]]] = [
+    (str.split("what movies were made in _"), title_by_year),
+]
+
 
