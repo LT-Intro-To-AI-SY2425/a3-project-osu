@@ -47,4 +47,26 @@ pa_list: List[Tuple[List[str], Callable[[List[str]], List[Any]]]] = [
     (str.split("what movies were made in _"), title_by_year),
 ]
 
+def search_pa_list(src: List[str]) -> List[str]:
+    """Takes source, finds matching pattern and calls corresponding action. If it finds
+    a match but has no answers it returns ["No answers"]. If it finds no match it
+    returns ["I don't understand"].
+
+    Args:
+        source - a phrase represented as a list of words (strings)
+
+    Returns:
+        a list of answers. Will be ["I don't understand"] if it finds no matches and
+        ["No answers"] if it finds a match but no answers
+    """
+    for pattern, action in pa_list:
+        print(pattern, src, action)
+        mat = match(pattern, src)
+        print(mat)
+        if mat != None:
+            result = action(mat)
+            if result == []:
+                return ["No answers"]
+            return result            
+    return["I don't understand"]
 
