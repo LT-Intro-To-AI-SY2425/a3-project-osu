@@ -6,14 +6,15 @@ from typing import List, Tuple, Callable, Any
 file_path = '/Users/jonathanhimawan/Documents/IntrotoAI/a3-project-osu-1/imdb_1000.csv'
 movie = pd.read_csv(file_path)
 
+print(movie['Runtime'])
 ##print(imdb_data.info())
 
-def get_title(movie: Tuple[str, str, int, List[str]]) -> str:
-    return movie[0]
+def get_title(movie):
+    return movie['Series_Title']
 
 
-def get_director(movie: Tuple[str, str, int, List[str]]) -> str:
-    return movie[1]
+def get_director(movie):
+    return movie['Released_Year']
 
 
 def get_year(movie: Tuple[str, str, int, List[str]]) -> int:
