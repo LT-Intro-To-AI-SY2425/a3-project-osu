@@ -21,7 +21,7 @@ def get_year(movie):
     return movie['Released_Year']
 
 
-def title_by_year(matches: List[str]) -> List[str]:
+def title_by_year(matches):
     """Finds all movies made in the passed in year
 
     Args:
@@ -33,7 +33,6 @@ def title_by_year(matches: List[str]) -> List[str]:
     """
     result = []
     year = int(matches[0])
-    print(year)
     for movie in movie:
         print(get_year(movie))
         print(get_title(movie))
