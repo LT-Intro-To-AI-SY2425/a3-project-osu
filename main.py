@@ -14,15 +14,12 @@ def get_title(movie):
 
 
 def get_director(movie):
+    return movie['Director']
+
+
+def get_year(movie):
     return movie['Released_Year']
 
-
-def get_year(movie: Tuple[str, str, int, List[str]]) -> int:
-    return movie[2]
-
-
-def get_actors(movie: Tuple[str, str, int, List[str]]) -> List[str]:
-    return movie[3]
 
 def title_by_year(matches: List[str]) -> List[str]:
     """Finds all movies made in the passed in year
