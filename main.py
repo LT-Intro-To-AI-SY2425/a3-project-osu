@@ -1,8 +1,9 @@
 import pandas as pd
+import numpy as npclear
 from match import match
 from typing import List, Tuple, Callable, Any
 
-file_path = '/Users/jonathanhimawan/Documents/imdb_top_1000.csv'
+file_path = '/Users/jonathanhimawan/Documents/IntrotoAI/a3-project-osu-1/imdb_top_1000.csv'
 movie = pd.read_csv(file_path)
 
 ##print(imdb_data.info())
